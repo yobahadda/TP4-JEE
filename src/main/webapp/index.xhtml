@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<head>
+    <title>JSP - Hello World</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        h:form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: auto;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        h:commandButton {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        h:commandButton:hover {
+            background-color: #218838;
+        }
+        h:panelGrid {
+            margin-top: 20px;
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .output-label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<h1>Hello World!</h1>
+
+<h:form>
+    <!-- Civilité -->
+    <h:outputLabel for="civilite" value="Civilité:" />
+    <h:inputText id="civilite" value="#{clientBean.client.civilite}" required="true" />
+
+    <!-- Nom -->
+    <h:outputLabel for="nom" value="Nom:" />
+    <h:inputText id="nom" value="#{clientBean.client.nom}" required="true" />
+
+    <!-- Prénom -->
+    <h:outputLabel for="prenom" value="Prénom:" />
+    <h:inputText id="prenom" value="#{clientBean.client.prenom}" required="true" />
+
+    <!-- Code -->
+    <h:outputLabel for="code" value="Code:" />
+    <h:inputText id="code" value="#{clientBean.client.code}" required="true" />
+
+    <!-- Ville -->
+    <h:outputLabel for="ville" value="Ville:" />
+    <h:inputText id="ville" value="#{clientBean.client.ville}">
+    <f:validateLength maximum="10"/>
+
+    </h:inputText>
+
+    <!-- Code Postal -->
+    <h:outputLabel for="cp" value="Code Postal:" />
+    <h:inputText id="cp" value="#{clientBean.client.cp}" >
+        <f:validateLength minimum="6"/>
+    </h:inputText>
+
+    <!-- Email -->
+    <h:outputLabel for="mail" value="Email:" />
+    <h:inputText id="mail" value="#{clientBean.client.mail}" required="true" />
+
+    <!-- Phone Number -->
+    <h:outputLabel for="number" value="Phone Number:" />
+    <h:inputText id="number" value="#{clientBean.client.number}" required="true" />
+
+    <!-- Date of Birth -->
+    <h:outputLabel for="dateN" value="Date of Birth:" />
+    <h:inputText id="dateN" value="#{clientBean.client.dateN}" required="true" >
+        <f:convertDateTime pattern="dd/MM/yyyy" />
+    </h:inputText>
+
+    <!-- Submit Button -->
+    <h:commandButton value="Submit" action="#{clientBean.submit}" />
+
+</h:form>
+
+<!-- Display the Client Data in a Table -->
+<h:panelGrid columns="2" cellpadding="5">
+    <h:outputText class="output-label" value="Civilité:" />
+    <h:outputText value="#{clientBean.client.civilite}" />
+
+    <h:outputText class="output-label" value="Nom:" />
+    <h:outputText value="#{clientBean.client.nom}" />
+
+    <h:outputText class="output-label" value="Prénom:" />
+    <h:outputText value="#{clientBean.client.prenom}" />
+
+    <h:outputText class="output-label" value="Code:" />
+    <h:outputText value="#{clientBean.client.code}" />
+
+    <h:outputText class="output-label" value="Ville:" />
+    <h:outputText value="#{clientBean.client.ville}" />
+
+    <h:outputText class="output-label" value="Code Postal:" />
+    <h:outputText value="#{clientBean.client.cp}" />
+
+    <h:outputText class="output-label" value="Email:" />
+    <h:outputText value="#{clientBean.client.mail}" />
+
+    <h:outputText class="output-label" value="Phone Number:" />
+    <h:outputText value="#{clientBean.client.number}" />
+
+    <h:outputText class="output-label" value="Date of Birth:" />
+    <h:outputText value="#{clientBean.client.dateN}" />
+</h:panelGrid>
+
+</body>
+</html>
