@@ -1,41 +1,16 @@
 package com.example.tp4;
+import jakarta.persistence.Entity;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
-
 
 public class Client {
-    int code;
-    String civilite;
-    String nom;
-    String  prenom;
-    int cp;
-    String ville;
-    Date dateN;
-    String mail;
-    long number;
-    private static List<Client> clientList = new ArrayList<>();
-    public static List<Client> getClientList() {
-        return clientList;
-    }
-    public static void addClient(Client newClient) {
-        clientList.add(newClient);
-    }
-    public Client(int code, String civilite, String nom, String prenom, int cp, String ville, Date dateN, String mail, long number) {
-        this.code = code;
-        this.civilite = civilite;
-        this.nom = nom;
-        this.prenom = prenom;
-        this.cp = cp;
-        this.ville = ville;
-        this.dateN = dateN;
-        this.mail = mail;
-        this.number = number;
-    }
-    public Client()
-    {
-    }
+    int code ;
+    Date datecom;
+    float montant;
+    String modelP;
+    String statusP;
+    String modeL;
+    String statusL;
 
     public int getCode() {
         return code;
@@ -45,67 +20,63 @@ public class Client {
         this.code = code;
     }
 
-    public String getCivilite() {
-        return civilite;
+    public Date getDatecom() {
+        return datecom;
     }
 
-    public void setCivilite(String civilite) {
-        this.civilite = civilite;
+    public void setDatecom(Date datecom) {
+        this.datecom = datecom;
     }
 
-    public String getNom() {
-        return nom;
+    public float getMontant() {
+        return montant;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
+    public void setMontant(float montant) {
+        this.montant = montant;
     }
 
-    public String getPrenom() {
-        return prenom;
+    public String getModelP() {
+        return modelP;
     }
 
-    public void setPrenom(String prenom) {
-        this.prenom = prenom;
+    public void setModelP(String modelP) {
+        this.modelP = modelP;
     }
 
-    public int getCp() {
-        return cp;
+    public String getStatusP() {
+        return statusP;
     }
 
-    public void setCp(int cp) {
-        this.cp = cp;
+    public void setStatusP(String statusP) {
+        this.statusP = statusP;
     }
 
-    public String getVille() {
-        return ville;
+    public String getModeL() {
+        return modeL;
     }
 
-    public void setVille(String ville) {
-        this.ville = ville;
+    public void setModeL(String modeL) {
+        this.modeL = modeL;
     }
 
-    public Date getDateN() {
-        return dateN;
+    public String getStatusL() {
+        return statusL;
     }
 
-    public void setDateN(Date dateN) {
-        this.dateN = dateN;
+    public void setStatusL(String statusL) {
+        this.statusL = statusL;
     }
-
-    public String getMail() {
-        return mail;
+    public Client()
+    {
     }
-
-    public void setMail(String mail) {
-        this.mail = mail;
-    }
-
-    public long getNumber() {
-        return number;
-    }
-
-    public void setNumber(long number) {
-        this.number = number;
+    public Client(int code, Date datecom, float montant, String modelP, String statusP, String modeL, String statusL) {
+        this.code = code;
+        this.datecom = datecom;
+        this.montant = montant;
+        this.modelP = modelP;
+        this.statusP = statusP;
+        this.modeL = modeL;
+        this.statusL = statusL;
     }
 }

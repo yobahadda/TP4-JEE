@@ -62,82 +62,41 @@
 
 <h:form>
     <!-- Civilité -->
-    <h:outputLabel for="civilite" value="Civilité:" />
-    <h:inputText id="civilite" value="#{clientBean.client.civilite}" required="true" />
-
-    <!-- Nom -->
-    <h:outputLabel for="nom" value="Nom:" />
-    <h:inputText id="nom" value="#{clientBean.client.nom}" required="true" />
-
-    <!-- Prénom -->
-    <h:outputLabel for="prenom" value="Prénom:" />
-    <h:inputText id="prenom" value="#{clientBean.client.prenom}" required="true" />
-
-    <!-- Code -->
-    <h:outputLabel for="code" value="Code:" />
+    <h:outputLabel for="code" value="code:" />
     <h:inputText id="code" value="#{clientBean.client.code}" required="true" />
 
-    <!-- Ville -->
-    <h:outputLabel for="ville" value="Ville:" />
-    <h:inputText id="ville" value="#{clientBean.client.ville}">
-    <f:validateLength maximum="10"/>
-
-    </h:inputText>
-
-    <!-- Code Postal -->
-    <h:outputLabel for="cp" value="Code Postal:" />
-    <h:inputText id="cp" value="#{clientBean.client.cp}" >
-        <f:validateLength minimum="6"/>
-    </h:inputText>
-
-    <!-- Email -->
-    <h:outputLabel for="mail" value="Email:" />
-    <h:inputText id="mail" value="#{clientBean.client.mail}" required="true" />
-
-    <!-- Phone Number -->
-    <h:outputLabel for="number" value="Phone Number:" />
-    <h:inputText id="number" value="#{clientBean.client.number}" required="true" />
-
-    <!-- Date of Birth -->
-    <h:outputLabel for="dateN" value="Date of Birth:" />
-    <h:inputText id="dateN" value="#{clientBean.client.dateN}" required="true" >
+    <!-- Nom -->
+    <h:outputLabel for="datecom" value="datecom" />
+    <h:inputText id="datecom" value="#{clientBean.client.datecom}" required="true" >
         <f:convertDateTime pattern="dd/MM/yyyy" />
     </h:inputText>
 
+    <!-- Prénom -->
+    <h:outputLabel for="modelP" value="modelP:" />
+    <h:inputText id="modelP" value="#{clientBean.client.modelP}" required="true" />
+
+    <!-- Code -->
+    <h:outputLabel for="statusP" value="statusP:" />
+    <h:inputText id="statusP" value="#{clientBean.client.statusP}" required="true" />
+
+    <!-- Ville -->
+    <h:outputLabel for="modeL" value="modeL:" />
+    <h:inputText id="modeL" value="#{clientBean.client.modeL}"/>
+
+
+
+
+    <!-- Code Postal -->
+    <h:outputLabel for="statusL" value=" statusL:" />
+    <h:inputText id="statusL" value="#{clientBean.client.statusL}" />
+
+
     <!-- Submit Button -->
-    <h:commandButton value="Submit" action="#{clientBean.submit}" />
+    <h:commandButton value="Submit" action="#{clientBean.saveClient}" />
 
 </h:form>
 
-<!-- Display the Client Data in a Table -->
-<h:panelGrid columns="2" cellpadding="5">
-    <h:outputText class="output-label" value="Civilité:" />
-    <h:outputText value="#{clientBean.client.civilite}" />
 
-    <h:outputText class="output-label" value="Nom:" />
-    <h:outputText value="#{clientBean.client.nom}" />
-
-    <h:outputText class="output-label" value="Prénom:" />
-    <h:outputText value="#{clientBean.client.prenom}" />
-
-    <h:outputText class="output-label" value="Code:" />
-    <h:outputText value="#{clientBean.client.code}" />
-
-    <h:outputText class="output-label" value="Ville:" />
-    <h:outputText value="#{clientBean.client.ville}" />
-
-    <h:outputText class="output-label" value="Code Postal:" />
-    <h:outputText value="#{clientBean.client.cp}" />
-
-    <h:outputText class="output-label" value="Email:" />
-    <h:outputText value="#{clientBean.client.mail}" />
-
-    <h:outputText class="output-label" value="Phone Number:" />
-    <h:outputText value="#{clientBean.client.number}" />
-
-    <h:outputText class="output-label" value="Date of Birth:" />
-    <h:outputText value="#{clientBean.client.dateN}" />
-</h:panelGrid>
 
 </body>
 </html>
